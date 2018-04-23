@@ -1,9 +1,3 @@
-/.prove
 .build*
-/MYMETA.json
-/MYMETA.yml
-/Makefile
-/Map-Tube-Frankfurt-*.tar.gz
-/blib
-/pm_to_blib
+Map-Tube-Frankfurt-*
 *.sw*

@@ -1,35 +1,22 @@
 language: perl
+perl:
+  - "5.10"
+  - "5.12"
+  - "5.14"
+  - "5.16"
+  - "5.18"
+  - "5.20"  
+  - "5.22"
+  - "5.24"
+  - "5.26"            
+  - "dev"               
+  - "blead"             
 matrix:
- include:
-  - perl: "5.26"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.24"
-    env: WITH_TEST_MAP_TUBE=1
-  - perl: "5.20"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.18"
-    # test with minimum version
-    env: USE_MAP_TUBE_VERSION=3.40
-  - perl: "5.16"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.14"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.12"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.10"
-    env: USE_MAP_TUBE_VERSION=latest
-  - perl: "5.8"
-    env: USE_MAP_TUBE_VERSION=latest
-
+  #include:
+  #  - perl: 5.18
+  #    env: COVERAGE=1   # enables coverage+coveralls reporting
+  allow_failures:
+    - perl: blead       # ignore failures for blead perl
+sudo: false             # faster builds as long as you don't need sudo access
 before_install:
- - '[ "$USE_MAP_TUBE_VERSION" != "latest" ] && cpanm --quiet --notest Map::Tube~"==$USE_MAP_TUBE_VERSION" || true'
- - '[ "$WITH_TEST_MAP_TUBE" = 1 ]           && cpanm --quiet --notest Test::Map::Tube                     || true'
-
-after_script:
-  - make distcheck
-  - HARNESS_OPTIONS=j4:c make disttest
-
-branches:
- except:
-  - /appveyor/
-sudo: false
+  - eval $(curl https://travis-perl.github.io/init) --auto

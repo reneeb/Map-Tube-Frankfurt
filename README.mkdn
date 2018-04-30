@@ -96,3 +96,9 @@ This software is Copyright (c) 2018 by Renee Baecker.
 This is free software, licensed under:
 
     The Artistic License 2.0 (GPL Compatible)
+
+# CONTRIBUTORS
+
+- Mohammad S Anwar &lt;mohammad.anwar@yahoo.com>
+- reneeb &lt;info@perl-services.de>
+- Stefan Limbacher &lt;stefan@stelim.de>

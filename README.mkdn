@@ -8,7 +8,7 @@ Map::Tube::Frankfurt - Map::Tube::Frankfurt - interface to the Frankfurt S- and 
 
 # VERSION
 
-version 0.03
+version 0.04
 
 # DESCRIPTION
 

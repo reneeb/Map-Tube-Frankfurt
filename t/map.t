@@ -22,7 +22,7 @@ ok_map_functions($map);
 my @routes = <DATA>;
 ok_map_routes($map, \@routes);
 
-diag $map->to_string( $map->get_shortest_route( 'Riedstadt-Goddelau', 'Hauptbahnhof' ) );
+diag $map->get_shortest_route( 'Riedstadt-Goddelau', 'Hauptbahnhof' );
 
 __DATA__
 Route 1|Riedstadt-Goddelau|Hauptbahnhof|Riedstadt-Goddelau,Riedstadt-Wolfskehlen,Groß-Gerau Dornheim,Groß-Gerau Dornberg,Mörfelden,Walldorf,Neu-Isenburg-Zeppelinheim,Stadion,Niederrad,Hauptbahnhof
